@@ -158,7 +158,7 @@
 						base.$originalHeader.css({
 							'position': 'fixed',
 							'margin-top': base.options.marginTop,
-                                                        'top': 0,
+							'top': 0,
 							'left': newLeft,
 							'z-index': 3 // #18: opacity bug
 						});
@@ -203,10 +203,10 @@
 			}
 			// Copy cell widths from clone
 			if (!base.$originalHeaderCells) {
-				base.$originalHeaderCells = $('th,td', base.$originalHeader);
+				base.$originalHeaderCells = base.$originalHeader.children("tr").children("th,td");
 			}
 			if (!base.$clonedHeaderCells) {
-				base.$clonedHeaderCells = $('th,td', base.$clonedHeader);
+				base.$clonedHeaderCells = base.$clonedHeader.children("tr").children("th,td");
 			}
 			var cellWidths = base.getWidth(base.$clonedHeaderCells);
 			base.setWidth(cellWidths, base.$clonedHeaderCells, base.$originalHeaderCells);
